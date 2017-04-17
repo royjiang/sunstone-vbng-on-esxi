@@ -1540,14 +1540,15 @@ People have interest in Cisco IOS XRv 9000 Router based vBNG can follow this gui
 # Topology
 
 ## Physical topology
-<img src="https://docs.google.com/drawings/d/17lqMl8q18DxynflSm5A-zUcHKJ8EonfUGIHre9vJFyI/pub?w=960&amp;h=720">
+__ 
 
+<img src="https://docs.google.com/drawings/d/17lqMl8q18DxynflSm5A-zUcHKJ8EonfUGIHre9vJFyI/pub?w=960&amp;h=720">
+__ 
 There are three physical hosts in this testbed.	
 - An ESXi host running ESXi 5.50, detail release information shown as following display in ESXi host CLI
-
-	 ~ # uname -a
+__ 	 ~ # uname -a
 	VMkernel localhost.Roy_F1 5.5.0 #1 SMP Release build-1331820 Sep 18 2013 23:08:31 x86_64 GNU/Linux
-Hardware configuration of the ESXi host show as following
+__ Hardware configuration of the ESXi host show as following
 ![](assets/DraggedImage-45.png) 
 - A Linux host named “ubuntu-demo” used as SSH client.
 - A Win\_PC
@@ -1557,6 +1558,7 @@ Hardware configuration of the ESXi host show as following
 
 
 ## Logical topology
+
  <img src="https://docs.google.com/drawings/d/1PivCOL0bcCmD9I-PCYjKXlhjwfem3WIAUzzgktQtBdY/pub?w=960&amp;h=540">
 This picture shows the logical topology built inside ESXi virtualisation environment. 
 - 3 ESXi Standard vSwitchs need to be created for networking within the hypervisor and with outside world.
@@ -1609,7 +1611,7 @@ Use linux command SCP to download the image to your local linux host, also need 
 
 
 1. From a local MAC or linux host, SSH to an internal server and browse the folder to find the correct image
-	ZHJIANG-M-L02P:~ royjiang$ ssh zhjiang@sjc-xdm-141
+__ 	ZHJIANG-M-L02P:~ royjiang$ ssh zhjiang@sjc-xdm-141
 	'' zhjiang@sjc-xdm-141's password:
 	Last login: Sun Apr  9 18:52:46 2017 from shn-zhjiang-8812.cisco.com
 	Terminal is set to: xterm-256color
@@ -1631,6 +1633,7 @@ Use linux command SCP to download the image to your local linux host, also need 
 	drwxr-xr-x 2 nkhai xrops 4096 Apr  5 19:41 xrv9k
 	drwxr-xr-x 2 nkhai xrops 4096 Apr  5 16:16 xrvr
 	
+__ 
 	sjc-xdm-141:99> cd xrv9k/
 	sjc-xdm-141:100> ls -l
 	total 27617600
@@ -1674,15 +1677,13 @@ Use linux command SCP to download the image to your local linux host, also need 
 
 2. From a local MAC or linux host, SCP the image to my MAC. Please be noted, in my case I have no permission to download the K9 version. 
 
-
-
+__ 
 	royjiang@ubuntu-demo:~$ scp zhjiang@sjc-xdm-141:/auto/prod_weekly_archive1/bin/6.3.1.13I.DT_IMAGE/xrv9k/xrv9k-full-x-6.3.1.13I.ova xrv9k-full-x-6.3.1.13I.ova
 	
 	  --snip-- 
 	zhjiang@sjc-xdm-141's password:
 	xrv9k-full-x-6.3.1.13I.ova                                                                                                                                                                                                                   21%  234MB 169.7KB/s 1:27:26 ETA
-
-
+__ 
 3. Copy it to the PC running ESXi vSphere client
 
 With the image store in the PC running ESXi vSphere client, your are ready to do next step.
@@ -2009,8 +2010,7 @@ For the first time when we power on the VM, the IOS XRv is also loaded, we can a
 - Set the root-system username/password, in my case, to ROOT/ROOT (sadly in capital when the CAPS key was pressed by mistake)
 
 Following is the display when we login the console to watch the booting of IOS XR first time.
-
-	royjiang@ubuntu-demo:~$ telnet 192.168.200.220 2001
+__ 	royjiang@ubuntu-demo:~$ telnet 192.168.200.220 2001
 	Trying 192.168.200.220...
 	Connected to 192.168.200.220.
 	Escape character is '^]'.
@@ -2091,10 +2091,9 @@ Following is the display when we login the console to watch the booting of IOS X
 	
 	RP/0/RP0/CPU0:ios#
 
-
-
+__ 
 **Configure the hostname **
-	RP/0/RP0/CPU0:ios#conf t
+__ 	RP/0/RP0/CPU0:ios#conf t
 	Thu Apr 13 15:59:45.329 UTC
 	RP/0/RP0/CPU0:ios(config)#hostname vbng_2
 	RP/0/RP0/CPU0:ios(config)#hostname vbng_1
@@ -2104,17 +2103,16 @@ Following is the display when we login the console to watch the booting of IOS X
 	RP/0/RP0/CPU0:vbng_1(config)#
 	RP/0/RP0/CPU0:vbng_1(config)#
 	RP/0/RP0/CPU0:vbng_1(config)#exit
-
-**Show platform hardware information**
-	RP/0/RP0/CPU0:vbng_1#sh platform
+__ **Show platform hardware information**
+__ 	RP/0/RP0/CPU0:vbng_1#sh platform
 	Thu Apr 13 16:00:16.430 UTC
 	Node              Type                       State             Config state
 	--------------------------------------------------------------------------------
 	0/0/CPU0          R-IOSXRV9000-LC-C          IOS XR RUN        NSHUT
 	0/RP0/CPU0        R-IOSXRV9000-RP-C(Active)  IOS XR RUN        NSHUT
-
-
+__ 
 **Show software information**
+__ 
 	RP/0/RP0/CPU0:vbng_1#
 	RP/0/RP0/CPU0:vbng_1#sh install active
 	Thu Apr 13 16:00:24.311 UTC
@@ -2130,10 +2128,9 @@ Following is the display when we login the console to watch the booting of IOS X
 	
 	RP/0/RP0/CPU0:vbng_1#
 	RP/0/RP0/CPU0:vbng_1#
-
-
+__ 
 **Show running configure**
-	RP/0/RP0/CPU0:vbng_1#sh run
+__ 	RP/0/RP0/CPU0:vbng_1#sh run
 	Thu Apr 13 16:00:29.688 UTC
 	Building configuration...
 	!! IOS XR Configuration version = 6.3.1.13I
@@ -2179,8 +2176,7 @@ Following is the display when we login the console to watch the booting of IOS X
 	!
 	end
 	
-
-
+__ 
 
 
 
@@ -2227,6 +2223,7 @@ In the minimum configuration we have following stuff configured.
 - Configure the basic unnumbered interface, dynamic-template and control-policy needed to terminate a IPoE session 
 
 **Minimum configuration on vBNG**
+__ 
 	RP/0/RP0/CPU0:vbng_1#sh run
 	Fri Apr 14 09:32:44.885 UTC
 	Building configuration...
@@ -2322,13 +2319,13 @@ In the minimum configuration we have following stuff configured.
 	!
 	end
 
-
-
+__ 
 
 
 ## Step 6.2. Quick verification of BNG session
 When you turn on the network adapter 1 in Win XP CPE VM, you can see the first IPoE session created in the vBNG.
 **Show DHCP binding information**
+__ 
 	RP/0/RP0/CPU0:vbng_1#sh dhcp ipv4 ser binding
 	Fri Apr 14 00:18:41.769 UTC
 	
@@ -2337,7 +2334,9 @@ When you turn on the network adapter 1 in Win XP CPE VM, you can see the first I
 	--------------  --------------  ---------  ---------  -------------------  ---------  ----------
 	000c.29c3.a03a  100.1.0.1       BOUND      35993      Gi0/0/0/0.1          default    0x4000002
 
+__ 
 **Show subscriber session information**  
+__ 
 	RP/0/RP0/CPU0:vbng_1#sh subscriber  sess al
 	Fri Apr 14 00:20:04.854 UTC
 	Codes: IN - Initialize, CN - Connecting, CD - Connected, AC - Activated,
@@ -2348,8 +2347,7 @@ When you turn on the network adapter 1 in Win XP CPE VM, you can see the first I
 	--------------------------------------------------------------------------------
 	IP:DHCP      Gi0/0/0/0.1.ip1          AC        100.1.0.1 (default)
 	RP/0/RP0/CPU0:vbng_1#
-
-
+__ 
 **Congratulations, you have done with the build up of your vBNG testbed and created the first IPoE session on your vBNG.**
 
 
@@ -2379,7 +2377,7 @@ We need to map network adapter 1 on linux VM to network “VM Network” on the 
 ### Step 7.2.1. Edit the interfaces configure file 
  
 My config file as following 
-	royjiang@vm-ubuntu-server:$ sudo vim /etc/network/interfaces
+__ 	royjiang@vm-ubuntu-server:$ sudo vim /etc/network/interfaces
 	# This file describes the network interfaces available on your system
 	# and how to activate them. For more information, see interfaces(5).
 	
@@ -2407,14 +2405,18 @@ My config file as following
 	#dns-nameservers 192.168.200.1
 	
 
+__ 
+
 ### Step 7.2.2. Disable/enable the interfaces
+__ 
 	royjiang@vm-ubuntu-server:~$ sudo ifdown eth1
 	royjiang@vm-ubuntu-server:~$ sudo ifup eth1
 	royjiang@vm-ubuntu-server:~$ sudo ifdown eth0
 	royjiang@vm-ubuntu-server:~$ sudo ifup eth0
 	
-
+__ 
 ### Step 7.2.3. Check the interface configuration 
+__ 
 	royjiang@vm-ubuntu-server:~$ ifconfig
 	eth0      Link encap:Ethernet  HWaddr 00:0c:29:4e:93:f8
 	          inet addr:192.168.100.183  Bcast:192.168.100.255  Mask:255.255.255.0
@@ -2444,16 +2446,17 @@ My config file as following
 	          TX packets:72 errors:0 dropped:0 overruns:0 carrier:0
 	          collisions:0 txqueuelen:0
 	          RX bytes:7356 (7.3 KB)  TX bytes:7356 (7.3 KB)
-
+__ 
 
 ### Step 7.2.4. Check the route
+__ 
 	royjiang@vm-ubuntu-server:~$ route
 	Kernel IP routing table
 	Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
 	default         sjo-vlan630-gw. 0.0.0.0         UG    0      0        0 eth0
 	192.168.100.0   *               255.255.255.0   U     0      0        0 eth0
 	222.0.0.0       *               255.255.255.0   U     0      0        0 eth1
-
+__ 
 ### Step 7.2.5. Check the connection with ping command
 	royjiang@vm-ubuntu-server:~$ ping 192.168.100.1
 	PING 192.168.100.1 (192.168.100.1) 56(84) bytes of data.
@@ -2475,15 +2478,16 @@ __
 	--- 222.0.0.1 ping statistics ---
 	2 packets transmitted, 2 received, 0% packet loss, time 1001ms
 	rtt min/avg/max/mdev = 10.955/13.738/16.522/2.785 ms
-
+__ 
 
 ### Step 7.2.6. Reboot the ubuntu VM 
 So that the interface configure keep persistence over reboot
+__ 
 	royjiang@vm-ubuntu-server:~$ sudo reboot
-
+__ 
 ## Step 7.3. Install Freeradius server
 Now we can ssh to the ubuntu-server with the IP address set in Eth0 and process our tasks.
-
+__ 
 	royjiang@ubuntu-demo:~$ ssh royjiang@192.168.100.183
 	royjiang@192.168.100.183's password:
 	Permission denied, please try again.
@@ -2507,49 +2511,52 @@ Now we can ssh to the ubuntu-server with the IP address set in Eth0 and process 
 	
 	New release '16.04.2 LTS' available.
 	Run 'do-release-upgrade' to upgrade to it.
-
+__ 
 ## Step 7.3.1. apt-get install freeradius
 Let’s install a freeradius server firstly and do the basic configuration. 
-	royjiang@vm-ubuntu-server:~$ sudo apt-get install  freeradius
+__ 	royjiang@vm-ubuntu-server:~$ sudo apt-get install  freeradius
 
-
+__ 
 ## Step 7.3.2. Register the client in Freeradius
 We need to add the vBNG as a client of Freeradius server by editing the Freeradius `clients.conf` file.
  
-	royjiang@vm-ubuntu-server:~$ cd /etc/freeradius/
+__ 	royjiang@vm-ubuntu-server:~$ cd /etc/freeradius/
 	royjiang@vm-ubuntu-server:/etc/freeradius$ sudo vim clients.conf
-
+__ 
 
 Add following strings to the clients.conf
 Here 222.0.0.1 is the ip address of vBNG core facing interface(G0/0/0/1), which is in the same network of the ubuntu-server. You can also use loopback as the source ip for vBNG to visit Freeradius, that need to add the route in the ubuntu-server.
+__ 
 	client 222.0.0.1 {
 	        secret          = cisco
 	        shortname       = vBNG_1
 	}
-
+__ 
 
 
 ## Step 7.3.3. Create a RADIUS user profile
 here we edit the users file to add a new user profile for the window XP VM
+__ 
 	royjiang@vm-ubuntu-server:/etc/freeradius$ sudo vim users
-
+__ 
 Add following lines to the users file.
 - The username is `000c.29c3.a03a` which is the MAC of the Win XP network adapter 1, we configure the BNG to use client’s MAC as username and “cisco” as password to do authentication.
 - We specify the unnumbered interface which is the minimum attribute needed to bring up a IPoEv4 session.
 - Additionally, we enable accounting and specify the interval of interim accounting by using two attributes.
+
+__ 
 	#######vBNG_user_profile_example###
 	000c.29c3.a03a Cleartext-Password := "cisco"
 	        Cisco-AVPair += "subscriber:accounting-list=default",
 	        Acct-Interim-Interval += 120,
 	        Cisco-AVPair += "ipv4:ipv4-unnumbered=Loopback1001",
 	        Service-Type = Framed-User
-
-
+__ 
 ## Step 7.3.4. Stop radius service and start it in debug mode
 After any modification of free radius config you need to restart or stop/start free radius service.
 
 you can start with -X into debug mode to see the log on the server in real time, ctrl+c can quit from the debug mode.
-
+__ 
 	royjiang@vm-ubuntu-server:/etc/freeradius$ sudo service freeradius stop
 	freeradius stop/waiting
 	
@@ -2565,6 +2572,8 @@ you can start with -X into debug mode to see the log on the server in real time,
 	Listening on authentication address 127.0.0.1 port 18120 as server inner-tunnel
 	Listening on proxy address * port 1814
 	Ready to process requests.
+
+__ 
 **Now you Freeradius server is ready to process requests from your vBNG.**
 
 
@@ -2592,6 +2601,7 @@ On top of the minimum configuration we created in Step 6, we made following chan
 - Replace the old control-policy with the new one in the same sub-interface  accommodating the CPE Windows XP.
 
 **vBNG configuration with RADIUS based AAA**
+__ 
 	RP/0/RP0/CPU0:vbng_1#sh run
 	Fri Apr 14 11:42:08.220 UTC
 	Building configuration...
@@ -2709,8 +2719,7 @@ On top of the minimum configuration we created in Step 6, we made following chan
 	!
 	end
 
-
-
+__ 
 
 
 ## 8.2. Quick verification of BNG session with RADIUS authentication
@@ -2720,6 +2729,7 @@ When you refresh the NIC in Win XP CPE VM, you can see a new IPoE session create
 On BNG, A new session is created after passing the radius authentication, the needed attributes are downloaded from radius server
 
 **show subscriber session information**
+__ 
 	RP/0/RP0/CPU0:vbng_1#sh subscriber  sess al
 	Fri Apr 14 11:43:36.218 UTC
 	Codes: IN - Initialize, CN - Connecting, CD - Connected, AC - Activated,
@@ -2729,8 +2739,9 @@ On BNG, A new session is created after passing the radius authentication, the ne
 	                                                LNS Address (Vrf)
 	--------------------------------------------------------------------------------
 	IP:DHCP      Gi0/0/0/0.1.ip2          AC        100.1.0.2 (default)
-
+__ 
 **show subscriber session in detail**
+__ 
 	RP/0/RP0/CPU0:vbng_1#sh subscriber  sess al de internal
 	Fri Apr 14 11:45:49.163 UTC
 	Interface:                GigabitEthernet0/0/0/0.1.ip2
@@ -2787,8 +2798,9 @@ On BNG, A new session is created after passing the radius authentication, the ne
 	   Apr 14 11:15:06.752 SUBDB produce done
 	   Apr 14 11:15:06.880 IPv4 Up
 	
-
+__ 
 **show radius statistics on vBNG**
+__ 
 	RP/0/RP0/CPU0:vbng_1#sh radius
 	Fri Apr 14 11:15:42.754 UTC
 	Global dead time: 0 minute(s)
@@ -2823,10 +2835,11 @@ On BNG, A new session is created after passing the radius authentication, the ne
 	        0 requests, 0 timeouts, 0 response, 0 pending
 	
 	RP/0/RP0/CPU0:vbng_1#
-
+__ 
 
 On ubuntu-server you can also see the log of radius event, example of the log for an accounting message is as following
 **RADIUS server log**
+__ 
 	rad_recv: Accounting-Request packet from host 222.0.0.1 port 37917, id=16, length=642
 		Acct-Interim-Interval = 120
 		Acct-Session-Time = 1800
@@ -2895,7 +2908,7 @@ On ubuntu-server you can also see the log of radius event, example of the log fo
 	Cleaning up request 16 ID 16 with timestamp +2401
 	Going to the next request
 	Ready to process requests.
-
+__ 
 # Next
 Now you are ready to try any cool Cisco IOS XR based BNG features on your testbed. Enjoy!
 The functionality of vBNG will be released in phase, the target is feature parity with physical BNG on ASR9000, of course it will take some time, so don’t get surprised if you find something does not work on vBNG.
