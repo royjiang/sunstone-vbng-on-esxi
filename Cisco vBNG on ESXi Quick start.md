@@ -35,7 +35,7 @@ People have interest in Cisco IOS XRv 9000 Router based vBNG can follow this gui
 There are three physical hosts in this testbed.	
 - An ESXi host running ESXi 5.50, detail release information shown as following display in ESXi host CLI
 
-'' '' ~ # uname
+'' ~ # uname
 '' VMkernel localhost.Roy_F1 5.5.0 #1 SMP Release build-1331820 Sep 18 2013 23:08:31 x86_64 GNU/Linux
 Hardware configuration of the ESXi host show as following
 (img) 
