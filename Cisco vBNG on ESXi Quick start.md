@@ -39,7 +39,7 @@ VMkernel localhost.Roy_F1 5.5.0 #1 SMP Release build-1331820 Sep 18 2013 23:08:3
 
 Hardware configuration of the ESXi host show as following
 
-![](DraggedImage.png) 
+![](https://github.com/royjiang/sunstone-vbng-on-esxi/blob/master/DraggedImage-1.png) 
 
 - A Linux host named “ubuntu-demo” used as SSH client.
 - A Win\_PC
